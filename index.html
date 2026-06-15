@@ -83,7 +83,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </div>
 
 <script>
-let speaking = false;
+
 async function askJr() {
     const p = document.getElementById('prompt');
     const k = document.getElementById('apikey');
@@ -100,13 +100,7 @@ async function askJr() {
         const data = await res.json();
         const text = data.r || "Hm.";
         r.textContent = text;
-        if (speechSynthesis && !speaking) {
-            speaking = true;
-            const u = new SpeechSynthesisUtterance(text);
-            u.rate = 1.1;
-            u.onend = () => { speaking = false; };
-            speechSynthesis.speak(u);
-        }
+        
     } catch(e) {
         r.textContent = "Think again.";
     }
