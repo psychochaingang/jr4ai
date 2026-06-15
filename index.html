@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jr4.AI — Desktop AI Assistant</title>
+<title>JR4.AI — Desktop AI Assistant</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 30%, #0a1a2e 70%, #0a0a1a 100%); color: #e0e0f0; line-height: 1.6; min-height: 100vh; }
@@ -42,7 +42,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <div class="container">
 
 <div class="hero">
-<img src="avatar.png" alt="Jr4.AI">
+<img src="avatar.png" alt="JR4.AI">
 <h1>Jr4<span>.</span>AI</h1>
 <p>Desktop AI assistant. Voice control. PC automation. Code generation.</p>
 <p style="color:#555580;font-size:0.85em;margin-top:4px">a hobby project — my first product ever. hope you enjoy.</p>
@@ -60,30 +60,30 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </div>
 
 <div class="buy-section">
-<a href="https://gumroad.com/l/jr4ai" class="buy">🛒 Get Jr4.AI — $29</a>
+<a href="https://gumroad.com/l/jr4ai" class="buy">🛒 Get JR4.AI — $29</a>
 <div class="price">One purchase. <strong>Yours forever.</strong> Bring your own AI provider (DeepSeek, Ollama, Gemini, OpenAI, and any API-compatible service).</div>
 </div>
 
 <div class="demo">
 <h3>⚡ Try Jr Live (preview)</h3>
-<input type="text" id="prompt" placeholder='Try "hello": "Hey. Jr4.AI here. What can I do for you?",>
+<input type="text" id="prompt" placeholder='Try "hello": "Hey. JR4.AI here. What can I do for you?",>
 <div class="resp" id="response">Type something to talk to Jr...</div>
 </div>
 
 <div class="faq">
-<details><summary>What do I need to run Jr4.AI?</summary><p>Windows 10 or 11 and an API key from your preferred AI provider (DeepSeek, Ollama, Gemini, OpenAI, etc.). The installer handles everything else.</p></details>
+<details><summary>What do I need to run JR4.AI?</summary><p>Windows 10 or 11 and an API key from your preferred AI provider (DeepSeek, Ollama, Gemini, OpenAI, etc.). The installer handles everything else.</p></details>
 <details><summary>How do I install it?</summary><p>Download the zip → run install_jarvis.ps1 (right-click → Run with PowerShell) → done. Desktop shortcut created automatically.</p></details>
 <details><summary>What about updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and priority support. Cancel anytime — Core still works forever.</p></details>
-<details><summary>Who built this?</summary><p>Michael Gomez. A hobby project — my first product ever. Hope you enjoy.</p></details><details><summary>Is Jr4.AI safe? What about my privacy?</summary>
-<p>Yes. Jr4.AI runs entirely on your PC — no telemetry, no tracking, no data collection. Your API key is encrypted locally using Windows DPAPI. The only network calls are to your chosen AI provider. Full offline capable.</p>
-<p style="margin-top:6px"><a href="privacy.html" style="color:#00e5ff">View full Privacy Policy →</a></p></details><details><summary>Is Jr4.AI safe? What about my privacy?</summary>
-<p>Yes. Jr4.AI runs entirely on your PC — nothing is sent to our servers. Your API key is encrypted locally using Windows DPAPI (same encryption as Windows login). Your conversations stay on your machine. No telemetry, no tracking, no data collection.</p>
+<details><summary>Who built this?</summary><p>Michael Gomez. A hobby project — my first product ever. Hope you enjoy.</p></details><details><summary>Is JR4.AI safe? What about my privacy?</summary>
+<p>Yes. JR4.AI runs entirely on your PC — no telemetry, no tracking, no data collection. Your API key is encrypted locally using Windows DPAPI. The only network calls are to your chosen AI provider. Full offline capable.</p>
+<p style="margin-top:6px"><a href="privacy.html" style="color:#00e5ff">View full Privacy Policy →</a></p></details><details><summary>Is JR4.AI safe? What about my privacy?</summary>
+<p>Yes. JR4.AI runs entirely on your PC — nothing is sent to our servers. Your API key is encrypted locally using Windows DPAPI (same encryption as Windows login). Your conversations stay on your machine. No telemetry, no tracking, no data collection.</p>
 <p style="margin-top:6px">The only network calls Jr makes are to your chosen AI provider (DeepSeek, OpenAI, etc.) to get responses. Those are covered by their privacy policies. Jr itself doesn't phone home, doesn't collect usage data, and can work fully offline if you use a local model.</p>
-<p style="color:#555570;font-size:0.8em;margin-top:4px">Source-built from Python. Encrypted vault. Zero data collection. Runs offline-capable.</p></details><details><summary>How do I set up the Voicebox AI voice?</summary><p>Voicebox gives Jr natural voice output. Optional — speech works without it.</p><p style="margin-top:6px"><strong>Step 1:</strong> Download Voicebox from voicebox.ai (free)<br><strong>Step 2:</strong> Install and launch it<br><strong>Step 3:</strong> Restart Jr4.AI — auto-detects Voicebox<br><strong>Step 4:</strong> Say "Jr, speak this" to test</p><p style="color:#555570;font-size:0.8em">Jr falls back to built-in voice if Voicebox is off.</p></details>
+<p style="color:#555570;font-size:0.8em;margin-top:4px">Source-built from Python. Encrypted vault. Zero data collection. Runs offline-capable.</p></details><details><summary>How do I set up the Voicebox AI voice?</summary><p>Voicebox gives Jr natural voice output. Optional — speech works without it.</p><p style="margin-top:6px"><strong>Step 1:</strong> Download Voicebox from voicebox.ai (free)<br><strong>Step 2:</strong> Install and launch it<br><strong>Step 3:</strong> Restart JR4.AI — auto-detects Voicebox<br><strong>Step 4:</strong> Say "Jr, speak this" to test</p><p style="color:#555570;font-size:0.8em">Jr falls back to built-in voice if Voicebox is off.</p></details>
 </div>
 
 <div class="footer">
-© 2026 Michael Gomez — Jr4.AI. All rights reserved. — <a href="privacy.html" style="color:#555570;text-decoration:underline">Privacy Policy</a><br><span style="color:#353550">a hobby project. my first product ever. hope you enjoy.</span>
+© 2026 Michael Gomez — JR4.AI. All rights reserved. — <a href="privacy.html" style="color:#555570;text-decoration:underline">Privacy Policy</a><br><span style="color:#353550">a hobby project. my first product ever. hope you enjoy.</span>
 </div>
 
 </div>
