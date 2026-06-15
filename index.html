@@ -73,7 +73,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <details><summary>What do I need to run Jr4.AI?</summary><p>Windows 10 or 11 and an API key from your preferred AI provider (DeepSeek, Ollama, Gemini, OpenAI, etc.). The installer handles everything else.</p></details>
 <details><summary>How do I install it?</summary><p>Download the zip → run install_jarvis.ps1 (right-click → Run with PowerShell) → done. Desktop shortcut created automatically.</p></details>
 <details><summary>What about updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and priority support. Cancel anytime — Core still works forever.</p></details>
-<details><summary>Who built this?</summary><p>Michael Gomez. A hobby project — my first product ever. Hope you enjoy.</p></details>
+<details><summary>Who built this?</summary><p>Michael Gomez. A hobby project — my first product ever. Hope you enjoy.</p></details><details><summary>How do I set up the Voicebox AI voice?</summary><p>Voicebox gives Jr natural voice output. Optional — speech works without it.</p><p style="margin-top:6px"><strong>Step 1:</strong> Download Voicebox from voicebox.ai (free)<br><strong>Step 2:</strong> Install and launch it<br><strong>Step 3:</strong> Restart Jr4.AI — auto-detects Voicebox<br><strong>Step 4:</strong> Say "Jr, speak this" to test</p><p style="color:#555570;font-size:0.8em">Jr falls back to built-in voice if Voicebox is off.</p></details>
 </div>
 
 <div class="footer">
@@ -85,6 +85,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <script>
 async function askJr() {
     const p = document.getElementById('prompt');
+    const k = document.getElementById('apikey');
     const r = document.getElementById('response');
     const msg = p.value.trim();
     if (!msg) return;
@@ -93,12 +94,12 @@ async function askJr() {
         const res = await fetch('https://jr4ai-demo.psychochaingang.workers.dev/ask', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({prompt: msg})
+            body: JSON.stringify({prompt: msg, key: k.value.trim() || undefined})
         });
         const data = await res.json();
-        r.textContent = data.r || "Jr's thinking…";
+        r.textContent = data.r || "Think again.";
     } catch(e) {
-        r.textContent = "Full Jr4.AI at $29. Desktop AI that actually works.";
+        r.textContent = "Jr's thinking… try again.";
     }
 }
 </script>
