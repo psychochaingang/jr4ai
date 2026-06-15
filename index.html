@@ -78,10 +78,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <div class="demo">
 <h3>⚡ Try JR Live</h3>
 <input type="text" id="prompt" placeholder='Say anything — "hello", "what can you do"...' style="width:100%;padding:12px;background:#0a0a1a;border:1px solid #2a2a45;border-radius:8px;color:#e0e0f0;font-size:1em;outline:none;margin-bottom:8px" onkeydown="if(event.key=='Enter')askJR()">
-<input type="text" id="apikey" placeholder="Optional: paste your DeepSeek API key for real responses" style="width:100%;padding:10px;background:#0a0a1a;border:1px solid #2a2a45;border-radius:6px;color:#555570;font-size:0.85em;outline:none;margin-bottom:8px">
+<input type="text" id="apikey" placeholder="Optional: paste your API key for live AI" style="width:100%;padding:10px;background:#0a0a1a;border:1px solid #2a2a45;border-radius:6px;color:#555570;font-size:0.85em;outline:none;margin-bottom:8px">
 <div class="response" id="response" style="background:#0a0a1a;border:1px solid #2a2a45;border-radius:8px;padding:16px;min-height:40px;color:#8888a0;font-size:0.9em">Type something above to talk to JR...</div>
 </div><div class="faq">
-<details><summary>What do I need to run JR4.AI?</summary><p>Windows 10/11 and a DeepSeek API key (free at platform.deepseek.com). The installer sets up everything else automatically.</p></details>
+<details><summary>What do I need to run JR4.AI?</summary><p>Windows 10 or 11 and an API key (DeepSeek, Ollama, or Gemini). The installer handles everything else.</p></details>
 <details><summary>How do I install it?</summary><p>Download the zip → run install_jarvis.ps1 (right-click → Run with PowerShell) → done. Desktop shortcut created automatically.</p></details>
 <details><summary>What about updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and support. Cancel anytime - Core still works forever. and priority support.</p></details>
 <details><summary>Who built this?</summary><p>Michael Gomez. All rights reserved.</p></details>
@@ -130,7 +130,7 @@ async function askJR() {
     for (const [k, v] of Object.entries(demos)) {
         if (lower.includes(k)) { r.textContent = v; return; }
     }
-    r.textContent = "I can help in the full version! Try 'hello', 'who are you', or paste your DeepSeek API key above for live AI.";
+    r.textContent = "I can help in the full version! Try 'hello', 'who are you', or paste your API key above for live AI.";
 }
 </script>
 </body>
