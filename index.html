@@ -74,12 +74,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <details><summary>What do I need to run JR4.AI?</summary><p>Windows 10 or 11 and an API key from your preferred AI provider (DeepSeek, Ollama, Gemini, OpenAI, etc.). The installer handles everything else.</p></details>
 <details><summary>How do I install it?</summary><p>Download the zip → run install_jarvis.ps1 (right-click → Run with PowerShell) → done. Desktop shortcut created automatically.</p></details>
 <details><summary>What about updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and priority support. Cancel anytime — Core still works forever.</p></details>
-<details><summary>Who built this?</summary><p>Michael Gomez. A hobby project — my first product ever. Hope you enjoy.</p></details><details><summary>Is JR4.AI safe? What about my privacy?</summary>
-<p>Yes. JR4.AI runs entirely on your PC — no telemetry, no tracking, no data collection. Your API key is encrypted locally using Windows DPAPI. The only network calls are to your chosen AI provider. Full offline capable.</p>
-<p style="margin-top:6px"><a href="privacy.html" style="color:#00e5ff">View full Privacy Policy →</a></p></details><details><summary>Is JR4.AI safe? What about my privacy?</summary>
-<p>Yes. JR4.AI runs entirely on your PC — nothing is sent to our servers. Your API key is encrypted locally using Windows DPAPI (same encryption as Windows login). Your conversations stay on your machine. No telemetry, no tracking, no data collection.</p>
-<p style="margin-top:6px">The only network calls Jr makes are to your chosen AI provider (DeepSeek, OpenAI, etc.) to get responses. Those are covered by their privacy policies. Jr itself doesn't phone home, doesn't collect usage data, and can work fully offline if you use a local model.</p>
-<p style="color:#555570;font-size:0.8em;margin-top:4px">Source-built from Python. Encrypted vault. Zero data collection. Runs offline-capable.</p></details><details><summary>How do I set up the Voicebox AI voice?</summary><p>Voicebox gives Jr natural voice output. Optional — speech works without it.</p><p style="margin-top:6px"><strong>Step 1:</strong> Download Voicebox from voicebox.ai (free)<br><strong>Step 2:</strong> Install and launch it<br><strong>Step 3:</strong> Restart JR4.AI — auto-detects Voicebox<br><strong>Step 4:</strong> Say "Jr, speak this" to test</p><p style="color:#555570;font-size:0.8em">Jr falls back to built-in voice if Voicebox is off.</p></details>
+<details><summary>Who built this?</summary><p>Michael Gomez. A hobby project — my first product ever. Hope you enjoy.</p></details>
+<details><summary>Is JR4.AI safe? What about my privacy?</summary>
+<p>Yes. JR4.AI runs entirely on your PC — no telemetry, no tracking, no data collection. Your API key is encrypted locally using Windows DPAPI. The only network calls are to your chosen AI provider. Fully offline capable with a local model.</p>
+<p style="margin-top:6px"><a href="privacy.html" style="color:#00e5ff">View full Privacy Policy →</a></p></details>
+<details><summary>How do I set up the Voicebox AI voice?</summary>
+<p>Voicebox gives JR4.AI natural voice output. Optional — speech works without it.</p><p style="margin-top:6px"><strong>Step 1:</strong> Download Voicebox from voicebox.ai (free)<br><strong>Step 2:</strong> Install and launch it<br><strong>Step 3:</strong> Restart JR4.AI — auto-detects Voicebox<br><strong>Step 4:</strong> Say "speak this" to test</p><p style="color:#555570">JR4.AI falls back to built-in voice if Voicebox is off.</p></details>
+<details><summary>Can I try it before buying?</summary><p>Yes! The live demo above works right now in your browser. Type anything and JR4.AI responds using DeepSeek AI. The full desktop version adds voice control, PC automation, memory, and code generation.</p></details>
+<details><summary>What languages does it support?</summary><p>English. Voice commands and responses are in English only.</p></details>
+<details><summary>Does it work on Mac or Linux?</summary><p>Windows 10 and 11 only. The installer uses Windows-specific features (PowerShell, DPAPI encryption, system tray).</p></details>
 </div>
 
 <div class="footer">
@@ -105,14 +108,15 @@ async function askJr() {
         const data = await res.json();
         const text = data.r || "Hm.";
         r.innerHTML = text + ' <span onclick="speakJr(\'' + encodeURIComponent(text) + '\')" style="cursor:pointer;color:#7b2ff7;font-size:0.8em">🔊</span>';
+        speakJr(encodeURIComponent(text));
     } catch(e) {
         r.innerHTML = "Try again.";
     }
 }
-async function speakJr(t) {
+function speakJr(t) {
     const text = decodeURIComponent(t);
     const audio = new Audio('https://jr4ai-demo.jr4ai.workers.dev/speak?text=' + encodeURIComponent(text));
-    audio.play();
+    audio.play().catch(() => {});
 }
 </script>
 </body>
