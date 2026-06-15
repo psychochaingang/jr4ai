@@ -83,25 +83,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </div>
 
 <script>
-const R = {
-"hello": "Hey. Jr here. Michael built me, so blame him for my attitude. What's up?",
-"who are you": "Jr4.AI. Desktop AI. I control your PC, write code, and roast your desktop if you ask nicely.",
-"what can you do": "Launch apps, check CPU/RAM/disk, write code, search the web, remember things. The works.",
-"build": "Full version scaffolds projects. Buy Jr4.AI at $29 to build anything.",
-"cpu": "Full version checks CPU, RAM, disk in real time. That's the product.",
-"help": "Get Jr4.AI at $29. One payment, yours forever. Voice, memory, code gen, system control."
-};
 async function askJr() {
     const p = document.getElementById('prompt');
     const r = document.getElementById('response');
     const msg = p.value.trim();
     if (!msg) return;
     r.textContent = '…';
-    const lower = msg.toLowerCase();
-    for (const [k, v] of Object.entries(R)) {
-        if (lower.includes(k)) { setTimeout(() => { r.textContent = v; }, 400); return; }
+    try {
+        const res = await fetch('https://jr4ai-demo.psychochaingang.workers.dev/ask', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({prompt: msg})
+        });
+        const data = await res.json();
+        r.textContent = data.r || "Jr's thinking…";
+    } catch(e) {
+        r.textContent = "Full Jr4.AI at $29. Desktop AI that actually works.";
     }
-    setTimeout(() => { r.textContent = "Jr can help in the full version. Try 'hello', 'who are you', or pick up the product above."; }, 400);
 }
 </script>
 </body>
