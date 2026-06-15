@@ -3,13 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JR4.AI — Desktop AI Assistant</title>
+<title>Jr4.AI — Desktop AI Assistant</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 30%, #0a1a2e 70%, #0a0a1a 100%); color: #e0e0f0; line-height: 1.6; min-height: 100vh; }
 .container { max-width: 700px; margin: 0 auto; padding: 40px 24px; }
-
-/* Header */
 .hero { text-align: center; margin-bottom: 40px; }
 .hero img { max-width: 160px; border-radius: 50%; box-shadow: 0 0 80px #00e5ff22, 0 0 160px #7b2ff722; animation: float 4s ease-in-out infinite; }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -17,36 +15,26 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .hero h1 span { color: #7b2ff7; }
 .hero p { color: #888896; font-size: 1.1em; margin-top: 8px; }
 .hero .badge { display: inline-block; background: #00e5ff11; border: 1px solid #00e5ff33; color: #00e5ff; padding: 4px 14px; border-radius: 20px; font-size: 0.75em; font-weight: 600; margin-top: 12px; letter-spacing: 1px; }
-
-/* Features */
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
 .feature { background: #16162a; border: 1px solid #2a2a45; border-radius: 12px; padding: 20px; transition: all .3s; }
 .feature:hover { border-color: #00e5ff33; transform: translateY(-2px); box-shadow: 0 4px 20px #00e5ff11; }
 .feature .icon { font-size: 1.5em; margin-bottom: 6px; }
 .feature h3 { color: #00e5ff; font-size: 0.9em; font-weight: 700; margin-bottom: 2px; }
 .feature p { color: #8888a0; font-size: 0.8em; }
-
-/* Demo */
 .demo { background: linear-gradient(135deg, #16162a, #1a0a2e); border: 1px solid #2a2a45; border-radius: 12px; padding: 24px; margin-bottom: 32px; }
 .demo h3 { color: #00e5ff; margin-bottom: 12px; font-size: 1em; }
-.demo input { width: 100%; padding: 12px; background: #0a0a1a; border: 1px solid #2a2a45; border-radius: 8px; color: #e0e0f0; font-size: 1em; outline: none; transition: all .3s; }
+.demo input { width: 100%; padding: 12px; background: #0a0a1a; border: 1px solid #2a2a45; border-radius: 8px; color: #e0e0f0; font-size: 1em; outline: none; }
 .demo input:focus { border-color: #7b2ff7; box-shadow: 0 0 20px #7b2ff722; }
-.demo .response { background: #0a0a1a; border: 1px solid #2a2a45; border-radius: 8px; padding: 16px; margin-top: 8px; min-height: 40px; color: #8888a0; font-size: 0.9em; }
-
-/* Buy */
+.demo .resp { background: #0a0a1a; border: 1px solid #2a2a45; border-radius: 8px; padding: 16px; margin-top: 8px; min-height: 60px; color: #8888a0; font-size: 0.9em; }
 .buy-section { text-align: center; margin-bottom: 32px; }
 .buy { display: inline-block; background: linear-gradient(135deg, #7b2ff7, #00e5ff); color: #0a0a1a; border: none; border-radius: 12px; padding: 18px 48px; font-size: 1.3em; font-weight: 800; cursor: pointer; text-decoration: none; transition: all .3s; letter-spacing: 0.5px; }
 .buy:hover { transform: scale(1.05); box-shadow: 0 8px 40px #7b2ff744; }
 .price { color: #555570; font-size: 0.9em; margin-top: 8px; }
 .price strong { color: #e0e0f0; }
-
-/* FAQ */
 .faq { background: #16162a; border: 1px solid #2a2a45; border-radius: 12px; padding: 20px; margin-bottom: 32px; }
 .faq details { margin-bottom: 8px; }
 .faq summary { color: #00e5ff; cursor: pointer; font-weight: 600; font-size: 0.9em; padding: 4px 0; }
 .faq p { color: #8888a0; margin-top: 4px; font-size: 0.85em; padding-left: 8px; }
-
-/* Footer */
 .footer { text-align: center; color: #353550; font-size: 0.75em; padding: 24px 0; border-top: 1px solid #1a1a30; }
 </style>
 </head>
@@ -54,72 +42,67 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 <div class="container">
 
 <div class="hero">
-<img src="avatar.png" alt="JR4.AI">
-<h1>JR4<span>.</span>AI</h1>
+<img src="avatar.png" alt="Jr4.AI">
+<h1>Jr4<span>.</span>AI</h1>
 <p>Desktop AI assistant. Voice control. PC automation. Code generation.</p>
 <p style="color:#555580;font-size:0.85em;margin-top:4px">a hobby project — my first product ever. hope you enjoy.</p>
 <div class="badge">One Purchase — Yours Forever</div>
 </div>
 
 <div class="grid">
-<div class="feature"><div class="icon">🎤</div><h3>Voice Control</h3><p>"JR, open Chrome" — it happens instantly.</p></div>
+<div class="feature"><div class="icon">🎤</div><h3>Voice Control</h3><p>"Jr, open Chrome" — it happens instantly.</p></div>
 <div class="feature"><div class="icon">⚡</div><h3>System Control</h3><p>CPU, RAM, disk, apps, files — all by voice or text.</p></div>
-<div class="feature"><div class="icon">🤖</div><h3>Code Builder</h3><p>"Build a password generator" — scaffolds code projects.</p></div>
-<div class="feature"><div class="icon">🧠</div><h3>Memory</h3><p>Remembers you across sessions. remembers preferences across sessions.</p></div>
+<div class="feature"><div class="icon">🤖</div><h3>Code Builder</h3><p>"Build a password generator" — scaffolds working projects.</p></div>
+<div class="feature"><div class="icon">🧠</div><h3>Memory</h3><p>Remembers preferences across sessions.</p></div>
 <div class="feature"><div class="icon">🔍</div><h3>Web Search</h3><p>Answers questions with live results.</p></div>
-<div class="feature"><div class="icon">🔒</div><h3>Your Privacy</h3><p>Runs on your PC. Your API key. Your data.</p></div>
+<div class="feature"><div class="icon">🔒</div><h3>Your Privacy</h3><p>Runs on your PC. Your API key. Your data stays yours.</p></div>
 </div>
 
 <div class="buy-section">
-<a href="https://gumroad.com/l/jr4ai" class="buy">🛒 Buy JR4.AI — $29</a>
-<div class="price">One purchase. <strong>Yours forever.</strong> Bring your own API key (DeepSeek — free to get).</div>
+<a href="https://gumroad.com/l/jr4ai" class="buy">🛒 Get Jr4.AI — $29</a>
+<div class="price">One purchase. <strong>Yours forever.</strong> Bring your own AI provider (DeepSeek, Ollama, Gemini, OpenAI, and any API-compatible service).</div>
 </div>
 
 <div class="demo">
-<h3>⚡ Try JR Live</h3>
-<input type="text" id="prompt" placeholder='Say anything — "hello", "what can you do"...' style="width:100%;padding:12px;background:#0a0a1a;border:1px solid #2a2a45;border-radius:8px;color:#e0e0f0;font-size:1em;outline:none;margin-bottom:8px" onkeydown="if(event.key=='Enter')askJR()">
+<h3>⚡ Try Jr Live (preview)</h3>
+<input type="text" id="prompt" placeholder='Try "hello", "what can you do"...' onkeydown="if(event.key=='Enter')askJr()">
+<div class="resp" id="response">Type something to talk to Jr...</div>
+</div>
 
-<div class="response" id="response" style="background:#0a0a1a;border:1px solid #2a2a45;border-radius:8px;padding:16px;min-height:40px;color:#8888a0;font-size:0.9em">Type something above to talk to JR...</div>
-</div><div class="faq">
-<details><summary>What do I need to run JR4.AI?</summary><p>Windows 10 or 11 and an API key from your preferred AI provider. The installer handles everything else.</p></details>
+<div class="faq">
+<details><summary>What do I need to run Jr4.AI?</summary><p>Windows 10 or 11 and an API key from your preferred AI provider (DeepSeek, Ollama, Gemini, OpenAI, etc.). The installer handles everything else.</p></details>
 <details><summary>How do I install it?</summary><p>Download the zip → run install_jarvis.ps1 (right-click → Run with PowerShell) → done. Desktop shortcut created automatically.</p></details>
-<details><summary>What about updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and support. Cancel anytime - Core still works forever. and priority support.</p></details>
-<details><summary>Who built this?</summary><p>Michael Gomez. All rights reserved.</p></details>
-<details><summary>How do I set up the Voicebox AI voice?</summary>
-<p>JR4.AI uses Voicebox for natural voice output. It's optional — speech works without it.</p>
-<p style="margin-top:8px"><strong>Step 1:</strong> Download Voicebox from voicebox.ai (free)<br>
-<strong>Step 2:</strong> Install and launch it (runs at http://127.0.0.1:17493)<br>
-<strong>Step 3:</strong> Restart JR4.AI — it auto-detects Voicebox and uses it for speech<br>
-<strong>Step 4:</strong> Say "JR, speak this" to test it</p>
-<p style="margin-top:8px;color:#555570">JR4.AI falls back to built-in offline voice if Voicebox isn't running.</p></details></div>
+<details><summary>What about updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and priority support. Cancel anytime — Core still works forever.</p></details>
+<details><summary>Who built this?</summary><p>Michael Gomez. A hobby project — my first product ever. Hope you enjoy.</p></details>
+</div>
 
 <div class="footer">
-© 2026 Michael Gomez — JR4.AI. All rights reserved.<br><span style="color:#353550">a hobby project. my first product ever. hope you enjoy.</span>
+© 2026 Michael Gomez — Jr4.AI. All rights reserved.<br><span style="color:#353550">a hobby project. my first product ever. hope you enjoy.</span>
 </div>
 
 </div>
 
-<script async>
-const demos = {
-"hello": "Hey. You're talking to Jr. Michael built me, so blame him for my attitude. What's up?",
+<script>
+const R = {
+"hello": "Hey. Jr here. Michael built me, so blame him for my attitude. What's up?",
 "who are you": "Jr4.AI. Desktop AI. I control your PC, write code, and roast your desktop if you ask nicely.",
 "what can you do": "Launch apps, check CPU/RAM/disk, write code, search the web, remember things. The works.",
 "build": "Say 'build a password generator' or 'create a todo app' — I scaffold projects. Full version does this for real.",
 "cpu": "I check your CPU, RAM, disk — all in real time. That's the full version.",
 "help": "Get the full Jr4.AI at $29. One payment, yours forever. Voice, memory, code gen, system control."
 };
-async function askJR() {
+async function askJr() {
     const p = document.getElementById('prompt');
     const r = document.getElementById('response');
-    const msg = p.value.trim();
-    if (!msg) return;
-    r.textContent = 'Jr is thinking...';
-    await new Promise(r => setTimeout(r, 600));
-    const lower = msg.toLowerCase();
-    for (const [k, v] of Object.entries(demos)) {
-        if (lower.includes(k)) { r.textContent = v; return; }
+    if (!p.value.trim()) return;
+    r.textContent = '…';
+    await new Promise(t => setTimeout(t, 500));
+    const m = p.value.toLowerCase();
+    for (const [k, v] of Object.entries(R)) {
+        if (m.includes(k)) { r.textContent = v; return; }
     }
-    r.textContent = "Jr can help with that in the full version. Try 'hello', 'who are you', or pick up the full product above.";
+    r.textContent = "Jr can help with that in the full version. Try 'hello', 'who are you', 'what can you do', or 'help'.";
 }
+</script>
 </body>
 </html>
