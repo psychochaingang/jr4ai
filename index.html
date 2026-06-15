@@ -6,62 +6,85 @@
 <title>JR4.AI — Desktop AI Assistant</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a0f; color: #e0e0f0; line-height: 1.6; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 30%, #0a1a2e 70%, #0a0a1a 100%); color: #e0e0f0; line-height: 1.6; min-height: 100vh; }
 .container { max-width: 700px; margin: 0 auto; padding: 40px 24px; }
-h1 { font-size: 3em; color: #00e5ff; font-weight: 800; margin-bottom: 8px; letter-spacing: -1px; }
-h1 span { color: #7b2ff7; }
-.subtitle { font-size: 1.2em; color: #888896; margin-bottom: 40px; }
-.features { display: grid; gap: 16px; margin-bottom: 40px; }
-.feature { background: #16161a; border: 1px solid #2a2a30; border-radius: 8px; padding: 20px; }
-.feature h3 { color: #00e5ff; margin-bottom: 4px; font-size: 1em; }
-.feature p { color: #888896; font-size: 0.9em; }
-.buy { background: linear-gradient(135deg, #7b2ff7, #00e5ff); color: #0a0a0f; border: none; border-radius: 8px; padding: 16px 32px; font-size: 1.3em; font-weight: 700; cursor: pointer; width: 100%; transition: transform .2s; text-decoration: none; display: block; text-align: center; }
-.buy:hover { transform: scale(1.02); }
-.price { text-align: center; margin: 12px 0 40px; color: #555560; font-size: 0.9em; }
-.price strong { color: #e0e0f0; font-size: 1.1em; }
-.test { background: #16161a; border: 1px solid #2a2a30; border-radius: 8px; padding: 24px; margin-bottom: 40px; }
-.test h3 { color: #00e5ff; margin-bottom: 12px; }
-.test input { width: 100%; padding: 10px; background: #0a0a0f; border: 1px solid #2a2a30; border-radius: 4px; color: #e0e0f0; margin-bottom: 8px; }
-.test .response { background: #0a0a0f; border: 1px solid #2a2a30; border-radius: 4px; padding: 12px; min-height: 60px; color: #888896; font-size: 0.9em; }
-.faq { margin-top: 40px; }
+
+/* Header */
+.hero { text-align: center; margin-bottom: 40px; }
+.hero img { max-width: 160px; border-radius: 50%; box-shadow: 0 0 80px #00e5ff22, 0 0 160px #7b2ff722; animation: float 4s ease-in-out infinite; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.hero h1 { font-size: 3.5em; color: #00e5ff; font-weight: 800; margin-top: 16px; letter-spacing: -1px; }
+.hero h1 span { color: #7b2ff7; }
+.hero p { color: #888896; font-size: 1.1em; margin-top: 8px; }
+.hero .badge { display: inline-block; background: #00e5ff11; border: 1px solid #00e5ff33; color: #00e5ff; padding: 4px 14px; border-radius: 20px; font-size: 0.75em; font-weight: 600; margin-top: 12px; letter-spacing: 1px; }
+
+/* Features */
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+.feature { background: #16162a; border: 1px solid #2a2a45; border-radius: 12px; padding: 20px; transition: all .3s; }
+.feature:hover { border-color: #00e5ff33; transform: translateY(-2px); box-shadow: 0 4px 20px #00e5ff11; }
+.feature .icon { font-size: 1.5em; margin-bottom: 6px; }
+.feature h3 { color: #00e5ff; font-size: 0.9em; font-weight: 700; margin-bottom: 2px; }
+.feature p { color: #8888a0; font-size: 0.8em; }
+
+/* Demo */
+.demo { background: linear-gradient(135deg, #16162a, #1a0a2e); border: 1px solid #2a2a45; border-radius: 12px; padding: 24px; margin-bottom: 32px; }
+.demo h3 { color: #00e5ff; margin-bottom: 12px; font-size: 1em; }
+.demo input { width: 100%; padding: 12px; background: #0a0a1a; border: 1px solid #2a2a45; border-radius: 8px; color: #e0e0f0; font-size: 1em; outline: none; transition: all .3s; }
+.demo input:focus { border-color: #7b2ff7; box-shadow: 0 0 20px #7b2ff722; }
+.demo .response { background: #0a0a1a; border: 1px solid #2a2a45; border-radius: 8px; padding: 16px; margin-top: 8px; min-height: 40px; color: #8888a0; font-size: 0.9em; }
+
+/* Buy */
+.buy-section { text-align: center; margin-bottom: 32px; }
+.buy { display: inline-block; background: linear-gradient(135deg, #7b2ff7, #00e5ff); color: #0a0a1a; border: none; border-radius: 12px; padding: 18px 48px; font-size: 1.3em; font-weight: 800; cursor: pointer; text-decoration: none; transition: all .3s; letter-spacing: 0.5px; }
+.buy:hover { transform: scale(1.05); box-shadow: 0 8px 40px #7b2ff744; }
+.price { color: #555570; font-size: 0.9em; margin-top: 8px; }
+.price strong { color: #e0e0f0; }
+
+/* FAQ */
+.faq { background: #16162a; border: 1px solid #2a2a45; border-radius: 12px; padding: 20px; margin-bottom: 32px; }
 .faq details { margin-bottom: 8px; }
-.faq summary { color: #00e5ff; cursor: pointer; font-weight: 600; }
-.faq p { color: #888896; margin-top: 8px; font-size: 0.9em; }
-.footer { text-align: center; color: #353540; font-size: 0.8em; margin-top: 60px; border-top: 1px solid #1a1a20; padding-top: 24px; }
+.faq summary { color: #00e5ff; cursor: pointer; font-weight: 600; font-size: 0.9em; padding: 4px 0; }
+.faq p { color: #8888a0; margin-top: 4px; font-size: 0.85em; padding-left: 8px; }
+
+/* Footer */
+.footer { text-align: center; color: #353550; font-size: 0.75em; padding: 24px 0; border-top: 1px solid #1a1a30; }
 </style>
 </head>
 <body>
 <div class="container">
 
+<div class="hero">
+<img src="avatar.png" alt="JR4.AI">
 <h1>JR4<span>.</span>AI</h1>
-<div style="text-align:center;margin:20px 0 40px">
-<img src="avatar.png" alt="JR4.AI Avatar" style="max-width:200px;border-radius:50%;box-shadow:0 0 60px #00e5ff33">
-</div>
-<div class="subtitle">Desktop AI assistant. Voice control. PC automation. Code generation. One purchase, yours forever.</div>
-
-<div class="features">
-<div class="feature"><h3>Voice Control</h3><p>Say "JR, open Chrome" or "launch notepad" — it happens.</p></div>
-<div class="feature"><h3>System Control</h3><p>Check CPU, RAM, disk space. Launch apps. Manage files. All by voice or text.</p></div>
-<div class="feature"><h3>Code Builder</h3><p>"Build me a password generator" — creates working project files instantly.</p></div>
-<div class="feature"><h3>Memory</h3><p>Remembers your preferences and context across sessions.</p></div>
-<div class="feature"><h3>Web Search</h3><p>Answers questions with live search results.</p></div>
-<div class="feature"><h3>Privacy</h3><p>Runs on your PC. Your API key. Your data stays yours.</p></div>
+<p>Desktop AI assistant. Voice control. PC automation. Code generation.</p>
+<div class="badge">One Purchase — Yours Forever</div>
 </div>
 
-<a href="https://gumroad.com/l/jr4ai" class="buy">Buy JR4.AI — $29</a>
-<div class="price">One purchase. <strong>Yours forever.</strong> Bring your own API key.</div>
+<div class="grid">
+<div class="feature"><div class="icon">🎤</div><h3>Voice Control</h3><p>"JR, open Chrome" — it happens instantly.</p></div>
+<div class="feature"><div class="icon">⚡</div><h3>System Control</h3><p>CPU, RAM, disk, apps, files — all by voice or text.</p></div>
+<div class="feature"><div class="icon">🤖</div><h3>Code Builder</h3><p>"Build a password generator" — creates working code.</p></div>
+<div class="feature"><div class="icon">🧠</div><h3>Memory</h3><p>Remembers you across sessions. Gets better over time.</p></div>
+<div class="feature"><div class="icon">🔍</div><h3>Web Search</h3><p>Answers questions with live results.</p></div>
+<div class="feature"><div class="icon">🔒</div><h3>Your Privacy</h3><p>Runs on your PC. Your API key. Your data.</p></div>
+</div>
 
-<div class="test">
-<h3>Try JR live (powered by H100 GPU)</h3>
-<input type="text" id="prompt" placeholder="Ask JR something..." onkeydown="if(event.key=='Enter')askJR()">
+<div class="buy-section">
+<a href="https://gumroad.com/l/jr4ai" class="buy">🛒 Buy JR4.AI — $29</a>
+<div class="price">One purchase. <strong>Yours forever.</strong> Bring your own API key (DeepSeek — free to get).</div>
+</div>
+
+<div class="demo">
+<h3>⚡ Try JR Live</h3>
+<input type="text" id="prompt" placeholder='Say anything — "whats my CPU", "build a script"...' onkeydown="if(event.key=='Enter')askJR()">
 <div class="response" id="response">JR will respond here...</div>
 </div>
 
 <div class="faq">
-<details><summary>What do I need to run JR4.AI?</summary><p>Windows 10/11 and a DeepSeek API key (free to get at platform.deepseek.com). The installer sets up everything else.</p></div>
-<details><summary>How do I install it?</summary><p>Download the zip, run install_jarvis.ps1 (right-click → Run with PowerShell), done. Desktop shortcut created automatically.</p></details>
-<details><summary>Can I get updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and priority support.</p></details>
-<details><summary>Who made this?</summary><p>Michael Gomez. Built with AI tooling. All rights reserved.</p></details>
+<details><summary>What do I need to run JR4.AI?</summary><p>Windows 10/11 and a DeepSeek API key (free at platform.deepseek.com). The installer sets up everything else automatically.</p></details>
+<details><summary>How do I install it?</summary><p>Download the zip → run install_jarvis.ps1 (right-click → Run with PowerShell) → done. Desktop shortcut created automatically.</p></details>
+<details><summary>What about updates?</summary><p>Core is $29 one-time. Optional $5/month for new features and priority support.</p></details>
+<details><summary>Who built this?</summary><p>Michael Gomez. All rights reserved.</p></details>
 </div>
 
 <div class="footer">
@@ -70,11 +93,13 @@ h1 span { color: #7b2ff7; }
 
 </div>
 
-<script>
+<script async>
+let busy = false;
 async function askJR() {
+    if (busy) return;
     const p = document.getElementById('prompt');
     const r = document.getElementById('response');
-    r.textContent = 'Thinking...';
+    r.textContent = 'Thinking...'; busy = true;
     try {
         const res = await fetch('https://3fyb4ax9hncmlj-11434.proxy.runpod.net/api/generate', {
             method: 'POST',
@@ -84,8 +109,9 @@ async function askJR() {
         const data = await res.json();
         r.textContent = data.response || 'No response';
     } catch(e) {
-        r.textContent = 'H100 offline. JR still works on your PC.';
+        r.textContent = 'H100 offline. JR still works on your PC with DeepSeek API.';
     }
+    busy = false;
 }
 </script>
 </body>
