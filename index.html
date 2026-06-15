@@ -91,7 +91,7 @@ async function askJr() {
     if (!msg) return;
     r.innerHTML = '…';
     try {
-        const res = await fetch('https://jr4ai-demo.psychochaingang.workers.dev/ask', {
+        const res = await fetch('https://jr4ai-demo.jr4ai.workers.dev/ask', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({prompt: msg, key: k.value.trim() || undefined})
@@ -105,7 +105,7 @@ async function askJr() {
 }
 async function speakJr(t) {
     const text = decodeURIComponent(t);
-    const audio = new Audio('https://jr4ai-demo.psychochaingang.workers.dev/speak?text=' + encodeURIComponent(text));
+    const audio = new Audio('https://jr4ai-demo.jr4ai.workers.dev/speak?text=' + encodeURIComponent(text));
     audio.play();
 }
 </script>
