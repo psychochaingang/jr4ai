@@ -87,21 +87,21 @@ const R = {
 "hello": "Hey. Jr here. Michael built me, so blame him for my attitude. What's up?",
 "who are you": "Jr4.AI. Desktop AI. I control your PC, write code, and roast your desktop if you ask nicely.",
 "what can you do": "Launch apps, check CPU/RAM/disk, write code, search the web, remember things. The works.",
-"build": "Say 'build a password generator' or 'create a todo app' — I scaffold projects. Full version does this for real.",
-"cpu": "I check your CPU, RAM, disk — all in real time. That's the full version.",
-"help": "Get the full Jr4.AI at $29. One payment, yours forever. Voice, memory, code gen, system control."
+"build": "Full version scaffolds projects. Buy Jr4.AI at $29 to build anything.",
+"cpu": "Full version checks CPU, RAM, disk in real time. That's the product.",
+"help": "Get Jr4.AI at $29. One payment, yours forever. Voice, memory, code gen, system control."
 };
 async function askJr() {
     const p = document.getElementById('prompt');
     const r = document.getElementById('response');
-    if (!p.value.trim()) return;
+    const msg = p.value.trim();
+    if (!msg) return;
     r.textContent = '…';
-    await new Promise(t => setTimeout(t, 500));
-    const m = p.value.toLowerCase();
+    const lower = msg.toLowerCase();
     for (const [k, v] of Object.entries(R)) {
-        if (m.includes(k)) { r.textContent = v; return; }
+        if (lower.includes(k)) { setTimeout(() => { r.textContent = v; }, 400); return; }
     }
-    r.textContent = "Jr can help with that in the full version. Try 'hello', 'who are you', 'what can you do', or 'help'.";
+    setTimeout(() => { r.textContent = "Jr can help in the full version. Try 'hello', 'who are you', or pick up the product above."; }, 400);
 }
 </script>
 </body>
