@@ -43,7 +43,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 
 <div class="hero">
 <img src="avatar.png" alt="JR4.AI">
-<h1>Jr4<span>.</span>AI</h1>
+<h1>JR4<span>.</span>AI</h1>
 <p>Desktop AI assistant. Voice control. PC automation. Code generation.</p>
 <p style="color:#555580;font-size:0.85em;margin-top:4px">a hobby project — my first product ever. hope you enjoy.</p>
 <div class="badge" style="margin-bottom:6px">One Purchase — Yours Forever</div>
@@ -51,7 +51,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </div>
 
 <div class="grid">
-<div class="feature"><div class="icon">🎤</div><h3>Voice Control</h3><p>"Jr, open Chrome" — it happens instantly.</p></div>
+<div class="feature"><div class="icon">🎤</div><h3>Voice Control</h3><p>"Open Chrome" — it happens instantly.</p></div>
 <div class="feature"><div class="icon">⚡</div><h3>System Control</h3><p>CPU, RAM, disk, apps, files — all by voice or text.</p></div>
 <div class="feature"><div class="icon">🤖</div><h3>Code Builder</h3><p>"Build a password generator" — scaffolds working projects.</p></div>
 <div class="feature"><div class="icon">🧠</div><h3>Memory</h3><p>Remembers preferences across sessions.</p></div>
@@ -65,9 +65,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </div>
 
 <div class="demo">
-<h3>⚡ Try Jr Live (preview)</h3>
-<input type="text" id="prompt" placeholder='Try "hello": "Hey. JR4.AI here. What can I do for you?",>
-<div class="resp" id="response">Type something to talk to Jr...</div>
+<h3>⚡ Try JR4.AI Live</h3>
+<input type="text" id="prompt" placeholder='Ask anything — "hello", "what can you do"...' onkeydown="if(event.key=='Enter')askJr()" style="margin-bottom:8px">
+<input type="hidden" id="apikey" value="">
+<div class="resp" id="response">Type something to talk to JR4.AI...</div>
 </div>
 
 <div class="faq">
