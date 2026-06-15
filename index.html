@@ -10,6 +10,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 .container { max-width: 700px; margin: 0 auto; padding: 40px 24px; }
 .hero { text-align: center; margin-bottom: 40px; }
 .hero img { max-width: 160px; border-radius: 50%; box-shadow: 0 0 80px #00e5ff22, 0 0 160px #7b2ff722; animation: float 4s ease-in-out infinite; }
+@keyframes glow { 0%,100% { filter:drop-shadow(0 0 30px #00e5ff22) drop-shadow(0 0 60px #7b2ff722); } 50% { filter:drop-shadow(0 0 60px #00e5ff44) drop-shadow(0 0 120px #7b2ff744); } }
 @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 .hero h1 { font-size: 3.5em; color: #00e5ff; font-weight: 800; margin-top: 16px; letter-spacing: -1px; }
 .hero h1 span { color: #7b2ff7; }
@@ -40,7 +41,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </head>
 <body>
 <div class="container">
-<img src="mascot.png" alt="JR4.AI Mascot" style="position:fixed;right:-300px;top:50%;transform:translateY(-50%) rotate(5deg);width:1500px;opacity:0.30;pointer-events:none;z-index:0">
+<img src="mascot.png" alt="JR4.AI Mascot" style="position:fixed;right:-300px;top:50%;transform:translateY(-50%) rotate(5deg);width:1500px;opacity:0.30;pointer-events:none;z-index:0;animation:glow 4s ease-in-out infinite">
 
 <div class="hero">
 <img src="avatar.png" alt="JR4.AI" style="max-width:160px;border-radius:50%;box-shadow:0 0 80px #00e5ff22,0 0 160px #7b2ff722;animation:float 4s ease-in-out infinite">
