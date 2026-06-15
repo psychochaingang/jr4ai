@@ -83,14 +83,13 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-
 </div>
 
 <script>
-
 async function askJr() {
     const p = document.getElementById('prompt');
     const k = document.getElementById('apikey');
     const r = document.getElementById('response');
     const msg = p.value.trim();
     if (!msg) return;
-    r.textContent = '…';
+    r.innerHTML = '…';
     try {
         const res = await fetch('https://jr4ai-demo.psychochaingang.workers.dev/ask', {
             method: 'POST',
@@ -99,11 +98,15 @@ async function askJr() {
         });
         const data = await res.json();
         const text = data.r || "Hm.";
-        r.textContent = text;
-        
+        r.innerHTML = text + ' <span onclick="speakJr(\'' + encodeURIComponent(text) + '\')" style="cursor:pointer;color:#7b2ff7;font-size:0.8em">🔊</span>';
     } catch(e) {
-        r.textContent = "Think again.";
+        r.innerHTML = "Try again.";
     }
+}
+async function speakJr(t) {
+    const text = decodeURIComponent(t);
+    const audio = new Audio('https://jr4ai-demo.psychochaingang.workers.dev/speak?text=' + encodeURIComponent(text));
+    audio.play();
 }
 </script>
 </body>
